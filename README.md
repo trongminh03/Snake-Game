@@ -56,23 +56,23 @@
 ## **See also**  
 
 ### *Các kỹ thuật sử dụng*  
-    - Thư viện SDL2.0
+- Thư viện SDL2.0
 
-    - Sử dụng nhiều class, vector, tách file, nạp chồng toán tử, ...
+- Sử dụng nhiều class, vector, tách file, nạp chồng toán tử, ...
 
-    - Có thể lưu lại điểm cao nhất sau mỗi lần chơi nhờ đọc, ghi file
+- Có thể lưu lại điểm cao nhất sau mỗi lần chơi nhờ đọc, ghi file
 
-    - Tạo các đối tượng: rắn, táo, đuôi, ... 
+- Tạo các đối tượng: rắn, táo, đuôi, ... 
 
-    - Dùng các kiến thức toán học để tính toán được góc cua của rắn để chèn ảnh thân và đuôi lúc cong 
+- Dùng các kiến thức toán học để tính toán được góc cua của rắn để chèn ảnh thân và đuôi lúc cong 
 
-    - Xử lý thời gian, thao tác chuột và bàn phím, âm thanh, hình ảnh, chữ. 
+- Xử lý thời gian, thao tác chuột và bàn phím, âm thanh, hình ảnh, chữ. 
 
-    - Tạo menu và các nút ấn di chuyển giữa các menu 
+- Tạo menu và các nút ấn di chuyển giữa các menu 
 
-    - Sử dụng photoshop để tự edit hầu hết các ảnh trong game
+- Sử dụng photoshop để tự edit hầu hết các ảnh trong game
 
-    - Sử dụng các kiến thức Đại số, Toán rời rạc: cụ thể là sử dụng toạ độ, thuật toán tìm kiếm A* (A* search algorithm) để tạo nên AI Snake vượt trội, 1 trong những phương thức tối ưu nhất để giúp cho rắn có thể tìm đồ ăn nhanh và né được chướng ngại vật và đuôi rắn. Ngoài ra: còn có khá nhiều thuật toán có thể áp dụng để làm nên AI Snake nhưng sẽ không tối ưu bằng ví dụ như: BFS(Breadth-First Search), DFS(Depth-first Search), Đường đi Hamilton (Hamiltonian cycle), ... 
+- Sử dụng các kiến thức Đại số, Toán rời rạc: cụ thể là sử dụng toạ độ, thuật toán tìm kiếm A* (A* search algorithm) để tạo nên AI Snake vượt trội, 1 trong những phương thức tối ưu nhất để giúp cho rắn có thể tìm đồ ăn nhanh và né được chướng ngại vật và đuôi rắn. Ngoài ra: còn có khá nhiều thuật toán có thể áp dụng để làm nên AI Snake nhưng sẽ không tối ưu bằng ví dụ như: BFS(Breadth-First Search), DFS(Depth-first Search), Đường đi Hamilton (Hamiltonian cycle), ... 
 
 ### *Nguồn tham khảo* 
 - Cách sử dụng, cài đặt SDL2.0 trên sublime text 3: tham khảo trên reddit, stack overflow và kênh youtube codegopher 
