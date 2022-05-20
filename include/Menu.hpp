@@ -7,12 +7,13 @@ class Menu: public GameText {
 private:
 	SDL_Rect pos_menu[MENU_ITEM];
 	SDL_Rect src_menu[MENU_ITEM]; 
-	bool selected[MENU_ITEM] = {0, 0, 0}; 
+	bool selected[MENU_ITEM] = {0, 0, 0, 0}; 
 	SDL_Texture* menu; 
 	SDL_Texture* play; 
 	SDL_Texture* exit; 
 	SDL_Texture* infor;  
-	//MENU: 0: play game, 1: exit, 2: info; 
+	SDL_Texture* credits; 
+	//MENU: 0: play game, 1: exit, 2: info, 3: credits; 
 
 
 	SDL_Rect pos_opt[NUM_PLAYER];  

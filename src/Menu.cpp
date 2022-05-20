@@ -21,11 +21,13 @@ void Menu::Setup() {
 	TextureManager::SetPos(pos_menu[PLAY_GAME], Vector2D(290, 220), Vector2D(250, 75)); 
 	TextureManager::SetPos(pos_menu[EXIT], Vector2D(360, 320), Vector2D(100, 75)); 
 	TextureManager::SetPos(pos_menu[INFOR], Vector2D(570, 190), Vector2D(64, 64)); 
+	TextureManager::SetPos(pos_menu[CREDITS], Vector2D(42, 531), Vector2D(171, 30)); 
 	//texture
 	menu = TextureManager::LoadTexture("res/gfx/Background/background.png"); 
 	infor = TextureManager::LoadTexture("res/gfx/Button/information.png");
 	play = TextureManager::LoadTexture("res/gfx/Button/play.png"); 
 	exit = TextureManager::LoadTexture("res/gfx/Button/exit.png"); 
+	credits = TextureManager::LoadTexture("res/gfx/Button/credits.png"); 
 
 	/*OPTION*/ //OPTION: 0: player1, 1: player2, 3: AI;
 	//dst 
@@ -56,15 +58,17 @@ bool Menu::CheckFocusWithRect(const int& x, const int& y, const SDL_Rect& rect) 
 }
 
 int Menu::showMenu() { 
-	TextureManager::SetPos(src_menu[0], Vector2D(0, 0), Vector2D(225, 50)); 
-	TextureManager::SetPos(src_menu[1], Vector2D(0, 0), Vector2D(78, 50)); 
-	TextureManager::SetPos(src_menu[2], Vector2D(0, 0), Vector2D(64, 64)); 
+	TextureManager::SetPos(src_menu[PLAY_GAME], Vector2D(0, 0), Vector2D(225, 50)); 
+	TextureManager::SetPos(src_menu[EXIT], Vector2D(0, 0), Vector2D(78, 50)); 
+	TextureManager::SetPos(src_menu[INFOR], Vector2D(0, 0), Vector2D(64, 64)); 
+	TextureManager::SetPos(src_menu[CREDITS], Vector2D(0, 0), Vector2D(171, 30)); 
 	while (true) {
 		SDL_RenderClear(Game::renderer); 
 		SDL_RenderCopy(Game::renderer, menu, NULL, NULL);
-		SDL_RenderCopy(Game::renderer, play, &src_menu[0], &pos_menu[0]); 
-		SDL_RenderCopy(Game::renderer, exit, &src_menu[1], &pos_menu[1]); 
-		SDL_RenderCopy(Game::renderer, infor, &src_menu[2], &pos_menu[2]);
+		SDL_RenderCopy(Game::renderer, play, &src_menu[PLAY_GAME], &pos_menu[PLAY_GAME]); 
+		SDL_RenderCopy(Game::renderer, exit, &src_menu[EXIT], &pos_menu[EXIT]); 
+		SDL_RenderCopy(Game::renderer, infor, &src_menu[INFOR], &pos_menu[INFOR]);
+		SDL_RenderCopy(Game::renderer, credits, &src_menu[CREDITS], &pos_menu[CREDITS]); 
 		SDL_RenderPresent(Game::renderer);
 		while (SDL_PollEvent(&m_event)) {
 			switch(m_event.type) {
@@ -73,6 +77,7 @@ int Menu::showMenu() {
 					SDL_DestroyTexture(infor); 
 					SDL_DestroyTexture(play); 
 					SDL_DestroyTexture(exit); 
+					SDL_DestroyTexture(credits); 
 					return 1;   
 				case SDL_MOUSEMOTION: 
 					xm = m_event.motion.x; 
@@ -122,6 +127,21 @@ int Menu::showMenu() {
 												Vector2D(64, 64)); 
 						}
 					}
+
+					if (CheckFocusWithRect(xm, ym, pos_menu[CREDITS])) {
+						if (!selected[CREDITS]) {
+							selected[CREDITS] = 1; 
+							TextureManager::SetPos(src_menu[CREDITS], Vector2D(171, 0),
+												Vector2D(171, 30)); 
+						}
+					}
+					else {
+						if (selected[CREDITS]) {
+							selected[CREDITS] = 0; 
+							TextureManager::SetPos(src_menu[CREDITS], Vector2D(0, 0), 
+												Vector2D(171, 30)); 
+						}
+					}
 					break;  
 				case SDL_MOUSEBUTTONDOWN: 
 					xm = m_event.button.x; 
@@ -134,6 +154,9 @@ int Menu::showMenu() {
 					}
 					if (CheckFocusWithRect(xm, ym, pos_menu[INFOR])) { 
 						return 2; 
+					}
+					if (CheckFocusWithRect(xm, ym, pos_menu[CREDITS])) {
+						return 3; 
 					}
 					break;
 				case SDL_KEYDOWN: 

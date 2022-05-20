@@ -46,18 +46,39 @@ int main(int argc, char* argv[]) {
 					switch(Game::event.type) {
 						case SDL_QUIT: 
 							exit(0);  
-						case SDL_KEYDOWN: {
+						case SDL_KEYDOWN: 
 							switch(Game::event.key.keysym.sym) {
 								case SDLK_ESCAPE: break; 
 								case SDLK_h: 
 									SDL_DestroyTexture(infor_text);  
 									goto Home; 
 							}
-						}
 					}
 				}
 			} 
 			 
+		}
+		else if (i == 3) {
+			//game credits
+			SDL_Texture* credits_text; 
+			credits_text = TextureManager::LoadTexture("res/gfx/Background/credits.png"); 
+			while (true) {
+				SDL_RenderCopy(Game::renderer, credits_text, NULL, NULL); 
+				SDL_RenderPresent(Game::renderer); 
+				while (SDL_PollEvent(&Game::event)) {
+					switch(Game::event.type) {
+						case SDL_QUIT: 
+							exit(0); 
+						case SDL_KEYDOWN: 
+							switch(Game::event.key.keysym.sym) {
+								case SDLK_ESCAPE: break; 
+								case SDLK_h: 
+									SDL_DestroyTexture(credits_text);  
+									goto Home; 
+							}
+					}
+				}
+			}
 		}
 		else {
 			//play game
