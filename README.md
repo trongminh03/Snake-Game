@@ -21,7 +21,10 @@
     + Game mode 3 - VS *AI Snake*: Người chơi sẽ có cơ hội thử sức với 1 con rắn thông minh có khả năng tránh né border và tìm táo rất nhanh. Nhiệm vụ của người chơi là trong vòng 1 phút cố gắng không để rắn chết và ăn nhiều táo hơn *AI Snake*. 
 
 - Game có đầy đủ các chức năng hỗ trợ người chơi trong việc điều chỉnh dễ dàng giữa các chế độ, thoát game, mô tả cách chơi, sử dụng phím esc để dừng game, ... 
+
 - Có âm thanh êm dịu thoải mái khi chơi
+
+- Snake Game(new edition) chắc chắn sẽ không khiến cho người chơi phải thất vọng với những tính năng, đồ hoạ cực kì độc đáo, mới lạ. 
 
 ### *Control* 
 
@@ -96,10 +99,17 @@
 
 - Học được cách setup môi trường, sử dụng thư viện ngoài. 
 
+- Chương trình rất dễ để refactor cũng như update tính năng. 
+
 - Học được thêm nhiều thuật toán hay và tự mình cài đặt vào chương trình. 
+
+### ***Điểm hạn chế*** 
+- Rắn trong chương trình vẫn đang được quản lý theo vector chứ chưa phải danh sách liên kết đơn.
 
 ### ***Hướng phát triển*** 
 - Cập nhật tính năng bảng xếp hạng, sau mỗi lần chơi người chơi sẽ được nhập tên để lưu lại kết quả chơi của mình.
+
+- Thêm nhiều loại đồ ăn có tính năng khác nhau. 
 
 - Thêm chế độ điều chỉnh tốc độ để người chơi có thể chọn tốc độ tuỳ thích, phù hợp với khả năng chơi của mình.
 
@@ -107,7 +117,7 @@
 
 - Nếu việc cải tiến AI Snake khả thi thì sẽ có thêm tính năng 2 người chơi vs AI Snake để giảm độ khó cho game. 
 
-### *Mức điểm tự đánh giá: 9.5++/10* 
+### *Mức điểm tự đánh giá: 9.5++ / 10* 
 
 
 
