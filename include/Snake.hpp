@@ -54,9 +54,7 @@ public:
 	void RenderHighestScore(const Vector2D &pos, const Vector2D &size); 
 	void RenderScore(const Vector2D &pos, const Vector2D &size); 
 
-	void FreeTexture(); 
-
-	static char prevDir; 
+	void FreeTexture();  
 private:  
 	Vector2D head; 
 	int size = SNAKE_SIZE;

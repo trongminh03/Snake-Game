@@ -6,6 +6,7 @@ class Audio {
 private:
 	Mix_Chunk* chunk = NULL;
 	Mix_Music* music = NULL;
+	int volume; 
 
 public:
 	Audio(); 
@@ -14,6 +15,7 @@ public:
 	void loadSound(const char* path);  
 	void loadMusic(const char* path); 
 	void playSound();  
-	void playMusic();   
+	void playMusic();
+	void playMusic(const int& v);    
 }; 
 

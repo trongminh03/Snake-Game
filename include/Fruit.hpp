@@ -10,13 +10,13 @@ public:
 	~Fruit(); 
 
 	void Setup(const char* filePath); 
+	void Setup2(const char* filePath); 
 	void Update(); 
 	void Render(); 
 	static void Respawn(); 
 	static void Respawn2(); 
 	static bool insideBlock(const Vector2D &pos_min, const Vector2D &pos_max); 
 
-	//static int fruitX, fruitY;
 	static Vector2D fruit;  
 	static int size; 
 
