@@ -16,6 +16,11 @@ void Fruit::Setup(const char* filePath) {
 	Respawn(); 
 } 
 
+void Fruit::Setup2(const char* filePath) {
+	fruitTexture = TextureManager::LoadTexture(filePath); 
+	Respawn2(); 
+}
+
 void Fruit::Update() {
 	TextureManager::SetPos(srcR, {0, 0}, {size, size}); 
 	TextureManager::SetPos(dstR, fruit, {size, size}); 

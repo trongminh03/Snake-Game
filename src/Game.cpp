@@ -89,7 +89,7 @@ void Game::setup2() {
     border.Setup();  
     roadblock.Setup2(); 
     snake2.Setup(); 
-    fruit.Setup("res/gfx/Snake/golden-apple.png");
+    fruit.Setup2("res/gfx/Snake/golden-apple.png");
     time_0 = SDL_GetTicks(); 
     endBackground.Setup();  
     home = false; 

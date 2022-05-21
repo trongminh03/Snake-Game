@@ -7,7 +7,10 @@ Audio::Audio() {
 	}
 }
 
-Audio::~Audio() {} 
+Audio::~Audio() {
+	Mix_FreeChunk(chunk); 
+	Mix_FreeMusic(music); 
+} 
 
 void Audio::loadSound(const char* path) {
 	chunk = Mix_LoadWAV(path); 
@@ -30,5 +33,11 @@ void Audio::playSound() {
 }
 
 void Audio::playMusic() {
+	Mix_PlayMusic(music, -1); 
+}
+
+void Audio::playMusic(const int& v) {
+	volume = (MIX_MAX_VOLUME * v) / 100; 
+	Mix_VolumeMusic(volume); 
 	Mix_PlayMusic(music, -1); 
 }

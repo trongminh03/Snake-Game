@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
 
 	theme_music = new Audio(); 
 	theme_music->loadMusic("res/audio/music/theme song.mp3"); 
-	theme_music->playMusic(); 
+	theme_music->playMusic(40); 
 	
 	GameMenu = new Menu();
 	GameMenu->Setup();

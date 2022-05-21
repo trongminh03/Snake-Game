@@ -49,14 +49,17 @@ void Tails::Update() {
 }
 
 void Tails::Render() { 
+	//Vẽ đuôi cuối cùng ở các đoạn cong 
 	if (tail[total_tail] == curve) {
 		TextureManager::DrawS(curveTailTexture, tail[total_tail], 
 						{size, size}, t_srcCurve); 
 	}
+	// Vẽ đuôi cuối cùng nếu k phải đoạn bo cong
 	else {
 		TextureManager::DrawEx(lastTailTexture, tail[total_tail], 
 							{size, size}, t_angle[total_tail], SDL_FLIP_NONE);	
 	}
+	// Vẽ các trường hợp thân cong và đánh dấu vị trí
 	for (int i = 1; i < total_tail; i++) {
 		if (tail[i - 1] + tail[i + 1] == tail[i] * 2 - Vector2D(size, size)) {
 			TextureManager::DrawEx(curveTexture, tail[i], {size, size}, 0, SDL_FLIP_NONE);
@@ -109,6 +112,7 @@ void Tails::Render() {
 				}				
 			}
 		}
+		// Trường hợp thân k bị bo cong
 		else { 
 			TextureManager::DrawEx(tailTexture, tail[i], {size, size}, 
 									t_angle[i], SDL_FLIP_NONE);
