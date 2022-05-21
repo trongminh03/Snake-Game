@@ -37,10 +37,9 @@
 
 ### *Preview* 
 
-![](res/demo%20image/end_demo.png)
-![](res/demo%20image/gamemode_demo.png) 
+![](res/demo%20image/gamemode_demo.png)
 ![](res/demo%20image/gameplay_demo.png) 
-
+![](res/demo%20image/end_demo.png)
 ## **Setup** 
 
 - *Cài đặt* 

@@ -91,7 +91,7 @@ void Snake::Update() {
 		Game::isRunning = false; 
 	
 	if (!Game::isRunning) 
-		lose_sound.playSound(); 
+		lose_sound.playSound(70); 
 }
 
 void Snake::Update2() { 
@@ -116,7 +116,7 @@ void Snake::Update2() {
 	}
 
 	if (!Game::isRunning) 
-		lose_sound.playSound();
+		lose_sound.playSound(70);
 }
 
 void Snake::UpdateAI() {
@@ -139,7 +139,7 @@ void Snake::UpdateAI() {
 		Game::isRunning = false; 
 
 	if (!Game::isRunning) 
-		lose_sound.playSound(); 
+		lose_sound.playSound(70); 
 }
 
 void Snake::DirectionAI() {
@@ -622,7 +622,7 @@ void Snake::moveSet2() {
 void Snake::CheckCollideFood() {
 	if (head + Vector2D(size, size) > Fruit::fruit 
 		&& Fruit::fruit + Vector2D(size, size) > head) {
-		eating_sound.playSound(); 
+		eating_sound.playSound(60); 
 		tails.Update(); 
 		Fruit::Respawn(); 
 		score += 10;	
@@ -632,7 +632,7 @@ void Snake::CheckCollideFood() {
 void Snake::CheckCollideFood2() {
 	if (head + Vector2D(size, size) > Fruit::fruit 
 		&& Fruit::fruit + Vector2D(size, size) > head) {
-		eating_sound.playSound(); 
+		eating_sound.playSound(60); 
 		tails.Update(); 
 		Fruit::Respawn2();   
 		score += 10;

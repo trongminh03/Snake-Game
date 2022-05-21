@@ -35,7 +35,7 @@
 #define SCORE2_H 50 
 
 /*Menu*/ 
-#define MENU_ITEM 4 
+#define MENU_ITEM 5
 #define NUM_PLAYER 3
 
 /*Map*/  
@@ -60,6 +60,7 @@
 #define EXIT 1
 #define INFOR 2 
 #define CREDITS 3
+#define MUSIC 4
 //MODE  
 #define PLAYER_1 0 
 #define PLAYER_2 1 

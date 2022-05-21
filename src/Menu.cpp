@@ -22,12 +22,15 @@ void Menu::Setup() {
 	TextureManager::SetPos(pos_menu[EXIT], Vector2D(360, 320), Vector2D(100, 75)); 
 	TextureManager::SetPos(pos_menu[INFOR], Vector2D(570, 190), Vector2D(64, 64)); 
 	TextureManager::SetPos(pos_menu[CREDITS], Vector2D(42, 531), Vector2D(171, 30)); 
+	TextureManager::SetPos(pos_menu[MUSIC], Vector2D(42, 15), Vector2D(32, 32)); 
 	//texture
 	menu = TextureManager::LoadTexture("res/gfx/Background/background.png"); 
 	infor = TextureManager::LoadTexture("res/gfx/Button/information.png");
 	play = TextureManager::LoadTexture("res/gfx/Button/play.png"); 
 	exit = TextureManager::LoadTexture("res/gfx/Button/exit.png"); 
 	credits = TextureManager::LoadTexture("res/gfx/Button/credits.png"); 
+	music = TextureManager::LoadTexture("res/gfx/Button/music.png"); 
+	theme_music.loadMusic("res/audio/music/theme song.mp3");
 
 	/*OPTION*/ //OPTION: 0: player1, 1: player2, 3: AI;
 	//dst 
@@ -58,17 +61,21 @@ bool Menu::CheckFocusWithRect(const int& x, const int& y, const SDL_Rect& rect) 
 }
 
 int Menu::showMenu() { 
+	if (!theme_music.isPlaying())
+		theme_music.playMusic(30); 
 	TextureManager::SetPos(src_menu[PLAY_GAME], Vector2D(0, 0), Vector2D(225, 50)); 
 	TextureManager::SetPos(src_menu[EXIT], Vector2D(0, 0), Vector2D(78, 50)); 
 	TextureManager::SetPos(src_menu[INFOR], Vector2D(0, 0), Vector2D(64, 64)); 
 	TextureManager::SetPos(src_menu[CREDITS], Vector2D(0, 0), Vector2D(171, 30)); 
+	TextureManager::SetPos(src_menu[MUSIC], Vector2D(0, 0), Vector2D(32, 32)); 
 	while (true) {
 		SDL_RenderClear(Game::renderer); 
 		SDL_RenderCopy(Game::renderer, menu, NULL, NULL);
 		SDL_RenderCopy(Game::renderer, play, &src_menu[PLAY_GAME], &pos_menu[PLAY_GAME]); 
 		SDL_RenderCopy(Game::renderer, exit, &src_menu[EXIT], &pos_menu[EXIT]); 
 		SDL_RenderCopy(Game::renderer, infor, &src_menu[INFOR], &pos_menu[INFOR]);
-		SDL_RenderCopy(Game::renderer, credits, &src_menu[CREDITS], &pos_menu[CREDITS]); 
+		SDL_RenderCopy(Game::renderer, credits, &src_menu[CREDITS], &pos_menu[CREDITS]);
+		SDL_RenderCopy(Game::renderer, music, &src_menu[MUSIC], &pos_menu[MUSIC]);
 		SDL_RenderPresent(Game::renderer);
 		while (SDL_PollEvent(&m_event)) {
 			switch(m_event.type) {
@@ -78,6 +85,7 @@ int Menu::showMenu() {
 					SDL_DestroyTexture(play); 
 					SDL_DestroyTexture(exit); 
 					SDL_DestroyTexture(credits); 
+					SDL_DestroyTexture(music); 
 					return 1;   
 				case SDL_MOUSEMOTION: 
 					xm = m_event.motion.x; 
@@ -157,6 +165,20 @@ int Menu::showMenu() {
 					}
 					if (CheckFocusWithRect(xm, ym, pos_menu[CREDITS])) {
 						return 3; 
+					}
+					if (CheckFocusWithRect(xm, ym, pos_menu[MUSIC])) {
+						if (!selected[MUSIC]) {
+							selected[MUSIC] = 1; 
+							TextureManager::SetPos(src_menu[MUSIC], Vector2D(32, 0),
+												Vector2D(32, 32)); 
+							theme_music.pause(); 
+						}
+						else if (selected[MUSIC]) {
+							selected[MUSIC] = 0; 
+							TextureManager::SetPos(src_menu[MUSIC], Vector2D(0, 0), 
+												Vector2D(32, 32)); 
+							theme_music.resume(); 
+						}
 					}
 					break;
 				case SDL_KEYDOWN: 

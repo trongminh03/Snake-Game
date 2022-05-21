@@ -14,18 +14,18 @@
 
 Game* game = nullptr; 
 Menu* GameMenu = nullptr; 
-Audio* theme_music; 
+//Audio* theme_music; 
 
 int main(int argc, char* argv[]) {
 	srand(time(0)); 
 	
 	game = new Game(); 
 	game->initWindow();  
-
+	/*
 	theme_music = new Audio(); 
 	theme_music->loadMusic("res/audio/music/theme song.mp3"); 
-	theme_music->playMusic(40); 
-	
+	theme_music->playMusic(20); 
+	*/ 
 	GameMenu = new Menu();
 	GameMenu->Setup();
 	Home: 
@@ -106,7 +106,7 @@ int main(int argc, char* argv[]) {
 	
 	delete game; 
 	delete GameMenu; 
-	delete theme_music; 
+	//delete theme_music; 
 	game->clean(); 
  	return 0; 
 }

@@ -2,6 +2,7 @@
 #include "Game.hpp" 
 #include "GameText.hpp" 
 #include "Score.hpp"
+#include "Audio.hpp"
 
 class Menu: public GameText {
 private:
@@ -12,8 +13,9 @@ private:
 	SDL_Texture* play; 
 	SDL_Texture* exit; 
 	SDL_Texture* infor;  
-	SDL_Texture* credits; 
-	//MENU: 0: play game, 1: exit, 2: info, 3: credits; 
+	SDL_Texture* credits;
+	SDL_Texture* music;  
+	//MENU: 0: play game, 1: exit, 2: info, 3: credits, 4: music; 
 
 
 	SDL_Rect pos_opt[NUM_PLAYER];  
@@ -35,6 +37,8 @@ private:
 	Score game_score; 
 	int xm = 0, ym = 0; 
 	SDL_Event m_event;
+
+	Audio theme_music; 
 
 	TTF_Font* font = NULL;
 	TTF_Font* font2 = NULL; 
