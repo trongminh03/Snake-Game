@@ -16,7 +16,7 @@ Menu::~Menu() {
 void Menu::Setup() {
 	font = TTF_OpenFont("res/font/SVN-Times New Roman 2 bold.ttf", 35);
 	font2 = TTF_OpenFont("res/font/SVN-Times New Roman 2 bold.ttf", 55); 
-	/*MENU*/ //MENU: 0: play game, 1: exit, 2: info;
+	/*MENU*/ //MENU: 0: play game, 1: exit, 2: info, 3: credits, 4: music;
 	//dst
 	TextureManager::SetPos(pos_menu[PLAY_GAME], Vector2D(290, 220), Vector2D(250, 75)); 
 	TextureManager::SetPos(pos_menu[EXIT], Vector2D(360, 320), Vector2D(100, 75)); 
@@ -67,7 +67,10 @@ int Menu::showMenu() {
 	TextureManager::SetPos(src_menu[EXIT], Vector2D(0, 0), Vector2D(78, 50)); 
 	TextureManager::SetPos(src_menu[INFOR], Vector2D(0, 0), Vector2D(64, 64)); 
 	TextureManager::SetPos(src_menu[CREDITS], Vector2D(0, 0), Vector2D(171, 30)); 
-	TextureManager::SetPos(src_menu[MUSIC], Vector2D(0, 0), Vector2D(32, 32)); 
+	if (!selected[MUSIC])
+		TextureManager::SetPos(src_menu[MUSIC], Vector2D(0, 0), Vector2D(32, 32)); 
+	else 
+		TextureManager::SetPos(src_menu[MUSIC], Vector2D(32, 0), Vector2D(32, 32)); 
 	while (true) {
 		SDL_RenderClear(Game::renderer); 
 		SDL_RenderCopy(Game::renderer, menu, NULL, NULL);
