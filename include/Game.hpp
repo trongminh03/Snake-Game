@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <chrono>
+#include <climits>
 #include "Console.hpp"
 #include "Vector2D.hpp"
 

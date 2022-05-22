@@ -26,6 +26,8 @@
 
 - Snake Game(new edition) chắc chắn sẽ không khiến cho người chơi phải thất vọng với những tính năng, đồ hoạ cực kì độc đáo, mới lạ. 
 
+- Video demo: https://youtu.be/I_IGbPugyH0
+
 ### *Control* 
 
 | Control | Player 1 | Player 2 | 

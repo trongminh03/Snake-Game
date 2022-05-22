@@ -166,9 +166,9 @@ void Snake::autoFindPath() {
 
 	Vector2D distance; 
 	bool blocked = false;
-	int fCostA = 999999999;
-	int fCostB = 999999999;
-	int fCostC = 999999999;
+	int fCostA = INT_MAX;
+	int fCostB = INT_MAX;
+	int fCostC = INT_MAX;
 	switch(dir) {
 		case UP:
 			hCostA = 0;
@@ -245,9 +245,9 @@ void Snake::autoFindPath() {
 			} else if(fCostC < fCostB && fCostC < fCostA) {
 				dir = RIGHT;
 			}
-			fCostA = 999999999;
-			fCostB = 999999999;
-			fCostC = 999999999;
+			fCostA = INT_MAX;
+			fCostB = INT_MAX;
+			fCostC = INT_MAX;
 			
 			break;
 		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -330,9 +330,9 @@ void Snake::autoFindPath() {
 			} else if (fCostC < fCostB && fCostC < fCostA) {
 				dir = RIGHT;
 			}
-			fCostA = 999999999;
-			fCostB = 999999999;
-			fCostC = 999999999;
+			fCostA = INT_MAX;
+			fCostB = INT_MAX;
+			fCostC = INT_MAX;
 			
 			break;
 
@@ -416,9 +416,9 @@ void Snake::autoFindPath() {
 				dir = UP;
 			}
 
-			fCostA = 999999999;
-			fCostB = 999999999;
-			fCostC = 999999999;
+			fCostA = INT_MAX;
+			fCostB = INT_MAX;
+			fCostC = INT_MAX;
 			
 			break;
 
@@ -502,9 +502,9 @@ void Snake::autoFindPath() {
 				dir = UP;
 			}
 
-			fCostA = 999999999;
-			fCostB = 999999999;
-			fCostC = 999999999;
+			fCostA = INT_MAX;
+			fCostB = INT_MAX;
+			fCostC = INT_MAX;
 			
 			break;
     }
