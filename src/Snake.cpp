@@ -250,7 +250,6 @@ void Snake::autoFindPath() {
 			fCostC = INT_MAX;
 			
 			break;
-		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 		case DOWN:
 			hCostA = 0;
@@ -336,7 +335,6 @@ void Snake::autoFindPath() {
 			
 			break;
 
-		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		case LEFT:
 			hCostA = 0;
 			hCostB = 0;
@@ -422,7 +420,6 @@ void Snake::autoFindPath() {
 			
 			break;
 
-		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		case RIGHT:
 			hCostA = 0;
 			hCostB = 0;
@@ -638,7 +635,6 @@ void Snake::CheckCollideFood2() {
 		score += 10;
 	}
 }
-
 
 bool Snake::Inside(const Vector2D &pos_min, const Vector2D &pos_max) {
 	return (pos_min <= head && head + Vector2D(size, size) <= pos_max);
