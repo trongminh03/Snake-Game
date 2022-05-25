@@ -1,6 +1,7 @@
 #pragma once 
 #include "Game.hpp" 
 #include "GameText.hpp" 
+#include "TextureManager.hpp"
 #include <time.h>
 
 using namespace std; 

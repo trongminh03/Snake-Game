@@ -2,7 +2,9 @@
 
 Timer::Timer() {}
 
-Timer::~Timer() {}
+Timer::~Timer() {
+	Free(); 
+}
 
 void Timer::Setup() {
 	font = TTF_OpenFont("res/font/EvilEmpire-4BBVK.ttf", 35);
@@ -19,10 +21,7 @@ void Timer::Update() {
 }
 
 void Timer::Render() {
-	dst_timer.x = 340; 
-	dst_timer.y = 550;
-	dst_timer.w = 150; 
-	dst_timer.h = 50; 
+	TextureManager::SetPos(dst_timer, {340, 550}, {150, 50}); 
 	time_text.CreateGameText(font, dst_timer); 
 }
 
