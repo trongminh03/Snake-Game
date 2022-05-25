@@ -43,23 +43,21 @@
 ![](res/demo%20image/gameplay_demo.png) 
 ![](res/demo%20image/end_demo.png)
 ## **Setup** 
+- *Cách 1*: 
+    1. Truy cập đường dẫn https://drive.google.com/file/d/1pIwsfcvwbCa7cYd7NwS-t19IV8rGmec6/view?usp=sharing để tải file rar về máy
 
-- *Cài đặt* 
-    + Cách 1: 
-        1. Truy cập đường dẫn https://drive.google.com/file/d/1pIwsfcvwbCa7cYd7NwS-t19IV8rGmec6/view?usp=sharing để tải file rar về máy
+    2. Giải nén file vừa tải, vào release và ấn đúp vào file main.exe để chơi game
 
-        2. Giải nén file vừa tải, vào release và ấn đúp vào file main.exe để chơi game
+- *Cách 2*: 
+    - Yêu cầu: Có C++ compiler và tải sublime text 
 
-    + Cách 2: 
-        - Yêu cầu: Có C++ compiler và tải sublime text 
+    1. Dùng terminal hoặc git bash tải source code về máy: git clone https://github.com/trongminh03/Snake-Game.git 
 
-        1. Dùng terminal hoặc git bash tải source code về máy: git clone https://github.com/trongminh03/Snake-Game.git 
+    2. Vào thư mục vừa tải về và ấn đúp vào SnakeGame.sublime-project
 
-        2. Vào thư mục vừa tải về và ấn đúp vào SnakeGame.sublime-project
+    3. Trên thanh công cụ vào Tools → Build System và ấn tick vào Build Debug
 
-        3. Trên thanh công cụ vào Tools → Build System và ấn tick vào Build Debug
-
-        4. Ấn phím F7 hoặc tổ hợp phím Fn + F7 hoặc tổ hợp phím Ctr + Shift + B để chạy chương trình 
+    4. Ấn phím F7 hoặc tổ hợp phím Fn + F7 hoặc tổ hợp phím Ctr + Shift + B để chạy chương trình 
 
 - *Mọi khó khăn trong phần cài đặt, trong quá trình chơi, hãy email qua 21020355@vnu.edu.vn.*
 
