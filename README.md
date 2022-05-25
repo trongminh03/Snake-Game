@@ -45,6 +45,12 @@
 ## **Setup** 
 
 - *Cài đặt* 
++ Cách 1: 
+    1. Truy cập đường dẫn https://drive.google.com/file/d/1pIwsfcvwbCa7cYd7NwS-t19IV8rGmec6/view?usp=sharing để tải file rar về máy
+
+    2. Giải nén file vừa tải, vào release và ấn đúp vào file main.exe để chơi game
+
++ Cách 2: 
     + Yêu cầu: Có C++ compiler và tải sublime text 
 
     1. Dùng terminal hoặc git bash tải source code về máy: git clone https://github.com/trongminh03/Snake-Game.git 
@@ -55,7 +61,7 @@
 
     4. Ấn phím F7 hoặc tổ hợp phím Fn + F7 hoặc tổ hợp phím Ctr + Shift + B để chạy chương trình 
 
-- *Mọi khó khăn trong phần cài đặt, trong quá trình chơi, hãy email qua 21020355@vnu.edu.vn.*/ 
+- *Mọi khó khăn trong phần cài đặt, trong quá trình chơi, hãy email qua 21020355@vnu.edu.vn.*
 
 ## **See also**  
 
